@@ -76,21 +76,21 @@
 
         function deleteTask(index) {
             const tasks = getTasks();
-            tasks.splice(index, 1);
+            tasks.splice(index, 1); // Remove the task at the given index
             localStorage.setItem('tasks', JSON.stringify(tasks));
             renderTasks();
         }
 
         function toggleTaskDone(index) {
             const tasks = getTasks();
-            tasks[index].done = !tasks[index].done;
+            tasks[index].done = !tasks[index].done; // Toggle the done state
             localStorage.setItem('tasks', JSON.stringify(tasks));
             renderTasks();
         }
 
-        function solveCaptcha(captchaUrl) {
-            // Simulate solving captcha (for demo purposes)
-            $('#captcha-result').text('Solved captcha: example-solution');
+        // Initial rendering of tasks
+        function loadTasks() {
+            renderTasks();
         }
     </script>
 </body>
